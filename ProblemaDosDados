@@ -1,0 +1,38 @@
+package problemadados;
+import java.util.Random;
+/**
+ *
+ * @author Adiel Nascimento - Universidade Federal Do Pará - 2018
+ */
+public class ProblemaDados {
+
+    public static void main(String[] args) {
+        int NumeroExp = 100000000;
+        int lInferior = 10, lSuperior = 15;
+        int s = 0;
+        int Cont = 0;
+
+        Random r = new Random();
+
+        for (int i=0; i < NumeroExp; i++){
+        //Declarar os 3 dados
+        int dado1 = r.nextInt(5) + 1;
+        int dado2 = r.nextInt(5) + 1;
+        int dado3 = r.nextInt(5) + 1;
+
+        //Soma as faces sorteadas dos 3 dados
+        int soma = dado1 + dado2 + dado3;
+        //System.out.print(soma + "\n");
+
+        if (soma >= 10 && soma <= 18){
+            Cont = Cont + 1;
+        }
+
+        s = (int) s + soma;
+        //System.out.print(s + "\n");
+        }
+
+        double ProbGeral = (double) Cont/NumeroExp;
+        System.out.print("Probabilidade da soma está entre 10 e 15: " + ProbGeral);
+    }
+}
